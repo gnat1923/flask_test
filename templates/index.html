@@ -1,13 +1,19 @@
-<h1>Hello World!</h1>
+{% extends "base.html" %}
 
-<p>This is my first web page!</p>
+{% block content %}
 
-<p>Isn't this cool?!</p> 
+    <h1>Hello World!</h1>
 
-<h3>Favourite foods</h3>
-{% for food in foods %}
-    {{ food }}<br/>
-{% endfor %}
+    <p>This is my first web page!</p>
 
-<br/><br/> 
-<p>{{ foods.0 }} is the best</p>
+    <p>Isn't this cool?!</p> 
+
+    <h3>Favourite foods</h3>
+    {% for food in foods %}
+        {{ food }}<br/>
+    {% endfor %}
+
+    <br/><br/> 
+    <p>{{ foods.0 }} is the best</p>
+    
+{% endblock %}
