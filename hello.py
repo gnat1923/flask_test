@@ -9,7 +9,7 @@ app.config["SECRET_KEY"] = "this is the secret key"
 
 # Create a form class
 class NamerForm(FlaskForm):
-    name = StringField("What's your name?", validators=[DataRequired()])
+    name = StringField("What is your name?", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
 # Create route decorator
