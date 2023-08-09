@@ -17,7 +17,8 @@
   <table class="table table-hover table-bordered table-striped">
     {% for our_user in our_users %}
     <tr>
-        <td>{{ our_user.id }}. <a href="{{ url_for('update', id=our_user.id) }}">{{ our_user.name }}</a> - {{ our_user.email }}</td>
+        <td>{{ our_user.id }}. <a href="{{ url_for('update', id=our_user.id) }}">{{ our_user.name }}</a> - {{ our_user.email }} - {{ our_user.favourite_colour }} 
+            <a href="{{ url_for('delete', id=our_user.id) }}" class="btn btn-danger">Delete</a> </td>
     </tr>
     {% endfor %}
     </table>
@@ -43,6 +44,14 @@
             class="form-control"
         )}}
         <br/>
+
+        {{ form.favourite_colour.label(
+            class="form-label") }}
+    
+        {{ form.favourite_colour(
+            class="form-control"
+        )}}
+        <br/>
     
         {{ form.submit(
             class="btn btn-secondary"
@@ -55,7 +64,8 @@
      <table class="table table-hover table-bordered table-striped">
         {% for our_user in our_users %}
         <tr>
-            <td>{{ our_user.id }}. <a href="{{ url_for('update', id=our_user.id) }}">{{ our_user.name }}</a> - {{ our_user.email }}</td>
+            <td>{{ our_user.id }}. <a href="{{ url_for('update', id=our_user.id) }}">{{ our_user.name }}</a> - {{ our_user.email }} - {{ our_user.favourite_colour}}
+                <a href="{{ url_for('delete', id=our_user.id) }}" class="btn btn-danger">Delete</a> </td>
         </tr>
         {% endfor %}
         </table>
